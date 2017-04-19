@@ -36,10 +36,11 @@ img {
   margin-bottom: 30px;
   padding: 10px; }
   .ship-card .card-image {
-    height: 125px; }
+    height: 175px; }
 
 .ship-info {
   background: red;
-  height: 300px; }
+  height: 300px;
+  margin-bottom: 30px; }
 
 /*# sourceMappingURL=style.css.map */

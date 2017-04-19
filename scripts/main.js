@@ -34,20 +34,20 @@ var spaceship = {
     var techSpecs = product.techspecs;
     return '<div role="tabpanel" class="tab-pane col-xs-12 '+activeClass+'" id="ship_'+index+'">\
               <div class="ship-info">\
-              '+spaceship.cardImage(product.name)+'\
+              <img class="img-responsive card-image" src="'+spaceship.cardImage(product.name)+'">\
               </div>\
             </div>'
   },
   cardImage: function(name) {
     var images = {
-      "Twin Ion Engine Starfighter": "http://vignette3.wikia.nocookie.net/starwarsrebels/images/d/de/The_Inquisitors_TIE_Fighter_2.png/revision/latest?cb=20161014095947",
-      "T-65 X-wing Starfighter": "https://dp1eoqdp1qht7.cloudfront.net/community/migrated/827/6f2/86394/image",
-      "Y-wing Starfighter": "http://vignette3.wikia.nocookie.net/starwarsrebels/images/d/de/The_Inquisitors_TIE_Fighter_2.png/revision/latest?cb=20161014095947",
-      "YT-1300 Light Freighter": "https://dp1eoqdp1qht7.cloudfront.net/community/migrated/827/6f2/86394/image",
-      "Alpha-class Xg-1 Star Wing": "https://dp1eoqdp1qht7.cloudfront.net/community/migrated/827/6f2/86394/image",
-      "Lambda-class T-4a shuttle": "https://dp1eoqdp1qht7.cloudfront.net/community/migrated/827/6f2/86394/image",
-      "RZ-1 A-wing interceptor": "https://dp1eoqdp1qht7.cloudfront.net/community/migrated/827/6f2/86394/image",
-      "B-wing heavy assault starfighter": "https://dp1eoqdp1qht7.cloudfront.net/community/migrated/827/6f2/86394/image"
+      "Twin Ion Engine Starfighter": "images/ship1.png",
+      "T-65 X-wing Starfighter": "images/ship2.png",
+      "Y-wing Starfighter": "images/ship3.png",
+      "YT-1300 Light Freighter": "images/ship4.png",
+      "Alpha-class Xg-1 Star Wing": "images/ship5.png",
+      "Lambda-class T-4a shuttle": "images/ship6.png",
+      "RZ-1 A-wing interceptor": "images/ship7.png",
+      "B-wing heavy assault starfighter": "images/ship8.png"
     }
     return images[name];
   }
