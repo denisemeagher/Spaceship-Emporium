@@ -1,6 +1,45 @@
+/* helpers */
+.spacer {
+  height: 50px; }
+
+.spacer-half {
+  height: 25px; }
+
+.spacer-line {
+  height: 15px; }
+
+.no-padding {
+  padding: 0; }
+
+.no-margin {
+  margin: 0; }
+
+.no-border {
+  border: none; }
+
+body, html {
+  height: 100%;
+  width: 100%;
+  padding: 0;
+  margin: 0; }
+
 body {
-  background: red; }
-  body p {
-    color: white; }
+  background: #102133;
+  color: #fff; }
+
+img {
+  width: 100%; }
+
+.ship-card {
+  background-color: #224870;
+  border-radius: 2px;
+  margin-bottom: 30px;
+  padding: 10px; }
+  .ship-card .card-image {
+    height: 125px; }
+
+.ship-info {
+  background: red;
+  height: 300px; }
 
 /*# sourceMappingURL=style.css.map */
