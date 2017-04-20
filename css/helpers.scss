@@ -22,3 +22,11 @@
 $white: #fff;
 $main-bg: #102133;
 $blue-bg: #224870;
+
+
+@mixin display-flex-center-align-column{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}

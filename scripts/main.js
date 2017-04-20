@@ -2,6 +2,18 @@ $(function() {
   spaceship.getData();
 })
 
+$(document).on('click', '.ship-btn', function(e){
+  e.preventDefault()
+  var self = $(this),
+  product = self.data("product");
+  spaceship.slideAnimation("100%", "-100%")
+})
+
+$(document).on('click', '.ship-home', function(e){
+  e.preventDefault()
+  spaceship.slideAnimation("0%", "100%")
+})
+
 var spaceship = {
   getData: function() {
     $.ajax({
@@ -13,30 +25,24 @@ var spaceship = {
       var products = data.products;
       $.each(products,function(index, product){
         var activeClass = index === 0 ? "active" : "";
-        $(".ship-tab").append(spaceship.cardTabHtml(index, activeClass, product))
-        $(".ship-content").append(spaceship.cardContentHtml(index, activeClass, product))
+        $(".ship-tab").append(spaceship.cardHtml(index, activeClass, product))
       })
     })
   },
-  cardTabHtml: function(index, activeClass, product) {
+  cardHtml: function(index, activeClass, product) {
     console.log(product)
-    return '<li role="presentation" class="col-md-4 col-lg-3 '+activeClass+'">\
-        <div class="ship-card">\
-          <img class="img-responsive card-image" src="'+spaceship.cardImage(product.name)+'">\
-          <p class="name">'+product.name+'</p>\
-          <p class="mfg">'+product.manufacturer+'</p>\
-          <p class="ship-class">'+product.class+'</p>\
-          <a href="#ship_'+index+'" role="tab" data-toggle="tab">View more details</a>\
+    var parseProduct = JSON.stringify(product)
+    return "<div role='presentation' class='col-md-4 col-lg-3 "+activeClass+"'>\
+        <div class='ship-card'>\
+          <img class='img-responsive card-image' src='"+spaceship.cardImage(product.name)+"'>\
+          <div class='overlay'>\
+            <p class='name'>"+product.name+"</p>\
+            <p class='mfg'>"+product.manufacturer+"</p>\
+            <p class='ship-class'>"+product.class+"</p>\
+            <a href='#ship_"+index+"' class='btn btn-primary ship-btn' data-product='"+parseProduct+"'>View tech specs</a>\
+          </div>\
         </div>\
-      </li>';
-  },
-  cardContentHtml: function(index, activeClass, product) {
-    var techSpecs = product.techspecs;
-    return '<div role="tabpanel" class="tab-pane col-xs-12 '+activeClass+'" id="ship_'+index+'">\
-              <div class="ship-info">\
-              <img class="img-responsive card-image" src="'+spaceship.cardImage(product.name)+'">\
-              </div>\
-            </div>'
+      </div>";
   },
   cardImage: function(name) {
     var images = {
@@ -50,5 +56,13 @@ var spaceship = {
       "B-wing heavy assault starfighter": "images/ship8.png"
     }
     return images[name];
+  },
+  slideAnimation: function(rightPosition, leftPosition){
+    $(".ship-tab").animate({
+      right: rightPosition
+    }, "slow");
+    $(".ship-info-container").animate({
+      left: leftPosition
+    }, "slow");
   }
 }

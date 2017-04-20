@@ -24,23 +24,53 @@ body, html {
   margin: 0; }
 
 body {
-  background: #102133;
+  background: #fff;
   color: #fff; }
 
 img {
   width: 100%; }
 
+header {
+  height: 75vh;
+  margin-bottom: 30px;
+  background-color: #102133;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column; }
+
+.main-container {
+  position: relative;
+  overflow: hidden; }
+  .main-container .ship-info-container {
+    width: 100%; }
+  .main-container .ship-tab {
+    position: relative; }
+
 .ship-card {
-  background-color: #224870;
+  position: relative;
+  background-color: #fff;
   border-radius: 2px;
   margin-bottom: 30px;
   padding: 10px; }
+  .ship-card:hover .overlay {
+    opacity: 1; }
   .ship-card .card-image {
-    height: 175px; }
-
-.ship-info {
-  background: red;
-  height: 300px;
-  margin-bottom: 30px; }
+    height: 200px; }
+  .ship-card .overlay {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.75);
+    text-align: center;
+    padding: 5px;
+    opacity: 0;
+    transition: opacity .25s ease;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column; }
 
 /*# sourceMappingURL=style.css.map */
