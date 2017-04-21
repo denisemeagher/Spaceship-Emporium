@@ -17,16 +17,22 @@
 .no-border {
   border: none;
 }
+@for $i from 10 through 30 {
+  .font-#{$i} {
+    font-size: #{$i}px;
+  }
+}
 
 // variables
-$white: #fff;
+$white: #FBFFFE;
 $main-bg: #102133;
-$blue-bg: #224870;
+$blue-bg: #002642;
+$off-white: #E5E8E7;
 
 
 @mixin display-flex-center-align-column{
   display: flex;
   justify-content: center;
-  align-items: center;
+  align-items: flex;
   flex-direction: column;
 }
