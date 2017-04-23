@@ -50,15 +50,13 @@ var spaceship = {
     .done(function(data){
       var products = data.products;
       $.each(products,function(index, product){
-        var activeClass = index === 0 ? "active" : "";
-        $(".ship-tab").append(spaceship.cardHtml(index, activeClass, product))
+        $(".ship-tab").append(spaceship.cardHtml(index, product))
       })
     })
   },
-  cardHtml: function(index, activeClass, product) {
-    console.log(product)
+  cardHtml: function(index, product) {
     var parseProduct = JSON.stringify(product)
-    return "<div role='presentation' class='col-xs-12 col-sm-6 col-md-4 col-lg-3 "+activeClass+"'>\
+    return "<div class='col-xs-12 col-sm-6 col-md-4 col-lg-3'>\
         <div class='ship-card'>\
           <img class='img-responsive card-image' src='"+spaceship.cardImage(product.name)+"'>\
           <div class='ship-info'>\
