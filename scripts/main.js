@@ -28,15 +28,23 @@ $(document).on('click', '.ship-btn', function(e){
     i = i+1;
   }
   $('body').animate({ scrollTop: $('.top-header').height() }, 400, function() {});
-  // $("..main-container").height(500)
   setTimeout(function(){
     spaceship.slideAnimation("100%", "0%")
+  })
+  $(".ship-tab").css({
+    "visibility": "hidden",
+    "max-height": $(".ship-info-container").innerHeight() + 100,
+    "overflow": "hidden"
   })
 })
 
 $(document).on('click', '.ship-home', function(e){
   e.preventDefault()
-  // spaceship.slideAnimation("100%", "0%")
+  $(".ship-tab").css({
+    "visibility": "visible",
+    "max-height": "auto",
+    "overflow": "auto"
+  })
   spaceship.slideAnimation("0%", "-100%")
 })
 

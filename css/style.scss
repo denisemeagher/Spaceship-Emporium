@@ -21,7 +21,6 @@ img {
 
 header.top-header {
   min-height: 375px;
-  // margin-bottom: 30px;
   background: url('../images/kyle-gregory-devaras-241280.png')center;
   @include display-flex-center-align-column;
   h1 {
@@ -34,7 +33,6 @@ header.top-header {
   }
   p {
     font-size: 24px;
-    // font-weight: lighter;
     @media (min-width: 992px) {
       font-size: 32px;
     }
@@ -87,7 +85,7 @@ header.top-header {
       position: relative;
       background: $white;
       margin: 0 auto;
-      width: 300px;
+      max-width: 300px;
       height: 400px;
       display: flex;
       align-items: center;

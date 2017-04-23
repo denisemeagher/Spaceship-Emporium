@@ -159,7 +159,7 @@ header.top-header {
       position: relative;
       background: #FBFFFE;
       margin: 0 auto;
-      width: 300px;
+      max-width: 300px;
       height: 400px;
       display: flex;
       align-items: center; }
