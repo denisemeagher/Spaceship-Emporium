@@ -13,21 +13,31 @@ $(document).on('click', '.ship-btn', function(e){
   if (product.price != undefined) {
     $('.ship-price').html(product.price);
     }
-  $(".techspecs-left, .techspecs-right").html("");
+  $(".techspecs-col1, .techspecs-col2, .techspecs-col3").html("");
   var i = 0;
+  var techspecsLength = Object.keys(product.techspecs).length;
   for(a in product.techspecs){
-    var techSpecsClass = (i > 3) ? ".techspecs-right" : ".techspecs-left";
-    $(techSpecsClass).append(spaceship.techSpecs(a, product.techspecs))
+    if (i < (techspecsLength === 10 ? 4 : 3 )) {
+      techSpecsClass = $('.techspecs-col1')
+    } else if (i < (techspecsLength === 10 ? 7 : 6 ) ) {
+      techSpecsClass = $('.techspecs-col2')
+    } else {
+      techSpecsClass = $('.techspecs-col3')
+    }
+    techSpecsClass.append(spaceship.techSpecs(a, product.techspecs))
     i = i+1;
   }
+  $('body').animate({ scrollTop: $('.top-header').height() }, 400, function() {});
+  // $("..main-container").height(500)
   setTimeout(function(){
-    spaceship.slideAnimation("105%", "-100%")
+    spaceship.slideAnimation("100%", "0%")
   })
 })
 
 $(document).on('click', '.ship-home', function(e){
   e.preventDefault()
-  spaceship.slideAnimation("0%", "100%")
+  // spaceship.slideAnimation("100%", "0%")
+  spaceship.slideAnimation("0%", "-100%")
 })
 
 var spaceship = {
@@ -48,14 +58,17 @@ var spaceship = {
   cardHtml: function(index, activeClass, product) {
     console.log(product)
     var parseProduct = JSON.stringify(product)
-    return "<div role='presentation' class='col-xs-12 col-sm-6 col-md-3 "+activeClass+"'>\
+    return "<div role='presentation' class='col-xs-12 col-sm-6 col-md-4 col-lg-3 "+activeClass+"'>\
         <div class='ship-card'>\
           <img class='img-responsive card-image' src='"+spaceship.cardImage(product.name)+"'>\
-          <div class='overlay'>\
+          <div class='ship-info'>\
             <p class='name'>"+product.name+"</p>\
-            <p class='mfg'>"+product.manufacturer+"</p>\
-            <p class='ship-class'>"+product.class+"</p>\
-            <a href='#ship_"+index+"' class='btn btn-primary ship-btn' data-product='"+parseProduct+"'>View tech specs</a>\
+            <p class='mfg'><strong> mfg: </strong> "+product.manufacturer+"</p>\
+            <p class='ship-class'><strong> class:</strong> "+product.class+"</p>\
+            <div class='buttons'>\
+              <a href='#ship_"+index+"' class='btn btn-primary ship-btn' data-product='"+parseProduct+"'>View specs</a>\
+              <a href='#' class='btn btn-primary buy-btn'> Buy Now</a>\
+            </div>\
           </div>\
         </div>\
       </div>";
@@ -84,12 +97,28 @@ var spaceship = {
   techSpecs: function(a, techspecs){
     return '<div class="media">\
       <div class="media-left media-middle">\
-        <i class="fa fa-industry"></i>\
+        <i class="fa '+spaceship.cardIcon(a)+'"></i>\
       </div>\
       <div class="media-body media-middle">\
           <p class="no-margin font-16">'+ a +':</p>\
-          <strong class="font-20 s-armament">'+techspecs[a]+'</strong>\
+          <strong class="font-16 s-armament">'+techspecs[a]+'</strong>\
       </div>\
     </div>'
+  },
+  cardIcon: function(name) {
+    console.log(name)
+    var icons = {
+      "length": "fa-window-minimize",
+      "maxatmosphericspeed": "fa-tachometer",
+      "shielding": "fa-shield",
+      "maxaccel": "fa-bolt",
+      "MGLT": "fa-magic",
+      "hull": "fa-space-shuttle",
+      "sensor": "fa-wifi",
+      "targeting": "fa-bullseye",
+      "armament": "fa-bomb",
+      "communications": "fa-comments"
+    }
+    return icons[name];
   }
 }
