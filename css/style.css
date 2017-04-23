@@ -179,12 +179,13 @@ header.top-header {
       color: #002642; }
     .main-container .ship-info-container .ship-home:hover {
       cursor: pointer; }
+    .main-container .ship-info-container a.btn {
+      width: 125px; }
   .main-container a.btn {
     background-color: #FBFFFE;
     border: 0.5px solid #F77F00;
     color: #F77F00;
     border: none;
-    width: 125px;
     padding: 10px 0;
     margin: 5px 0;
     font-size: 16px; }
@@ -224,6 +225,7 @@ header.top-header {
     .ship-card .ship-info .buttons {
       display: flex;
       justify-content: center;
+      flex: 1;
       flex-direction: column;
       margin-top: auto;
       margin-bottom: 10px; }
@@ -233,15 +235,18 @@ header.top-header {
         background-color: #F77F00; }
       .ship-card .ship-info .buttons a.btn {
         border: none;
-        width: 150px;
         padding: 10px 0;
         margin: 5px 10px;
         color: #FBFFFE; }
         .ship-card .ship-info .buttons a.btn:hover {
           box-shadow: 5px 5px 10px 0 rgba(0, 0, 0, 0.25), 5px 5px 10px 0 rgba(0, 0, 0, 0.25) !important;
           transition: 0.15s; }
+        @media (min-width: 768px) {
+          .ship-card .ship-info .buttons a.btn {
+            width: 125px; } }
       @media (min-width: 768px) {
         .ship-card .ship-info .buttons {
-          flex-direction: row; } }
+          flex-direction: row;
+          flex: 0; } }
 
 /*# sourceMappingURL=style.css.map */

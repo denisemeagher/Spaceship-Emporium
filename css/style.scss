@@ -56,8 +56,6 @@ header.top-header {
 
 .main-container {
   position: relative;
-  // overflow: hidden;
-  // min-height: 700px;
   height: auto;
   overflow: hidden;
   .ship-tab {
@@ -114,13 +112,15 @@ header.top-header {
         cursor: pointer;
       }
     }
+    a.btn {
+      width: 125px;
+    }
   }
   a.btn {
     background-color: $white;
     border: .5px solid $orange;
     color: $orange;
     border: none;
-    width: 125px;
     padding: 10px 0;
     margin: 5px 0;
     font-size: 16px;
@@ -139,9 +139,6 @@ header.top-header {
   margin-bottom: 30px;
   color: #333;
   border-radius: 4px;
-  // &:hover .overlay {
-  // opacity: 1;
-  // }
   .card-image {
     max-width: 60%;
     margin: 0 auto;
@@ -169,6 +166,7 @@ header.top-header {
     .buttons {
       display: flex;
       justify-content: center;
+      flex: 1;
       flex-direction: column;
       margin-top: auto;
       margin-bottom: 10px;
@@ -181,7 +179,6 @@ header.top-header {
       }
       a.btn {
         border: none;
-        width: 150px;
         padding: 10px 0;
         margin: 5px 10px;
         color: $white;
@@ -189,23 +186,14 @@ header.top-header {
           box-shadow: 5px 5px 10px 0 rgba(0, 0, 0, 0.25), 5px 5px 10px 0 rgba(0, 0, 0, 0.25) !important;
            transition: 0.15s;
         }
+        @media (min-width: 768px) {
+          width: 125px;
+        }
       }
       @media (min-width: 768px) {
         flex-direction: row;
+        flex: 0;
       }
     }
   }
-  // .overlay {
-  //   position: absolute;
-  //   left: 0;
-  //   right: 0;
-  //   top: 0;
-  //   bottom: 0;
-  //   background: rgba(0,0,0,.75);
-  //   text-align: center;
-  //   padding: 5px;
-  //   opacity: 0;
-  //   transition: opacity .25s ease;
-  //   @include display-flex-center-align-column;
-  // }
 }

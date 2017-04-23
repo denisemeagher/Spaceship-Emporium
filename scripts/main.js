@@ -6,9 +6,9 @@ $(document).on('click', '.ship-btn', function(e){
   e.preventDefault()
   var self = $(this),
   product = self.data("product");
-  $('.ship-name').html(product.name);
-  $('.ship-mfg').html(product.manufacturer);
-  $('.ship-class').html(product.class);
+  $('.info-right .ship-name').html(product.name);
+  $('.info-right .ship-mfg').html(product.manufacturer);
+  $('.info-right .ship-class').html(product.class);
   $('.info-image img').attr("src", spaceship.cardImage(product.name));
   if (product.price != undefined) {
     $('.ship-price').html(product.price);
@@ -69,8 +69,8 @@ var spaceship = {
           <img class='img-responsive card-image' src='"+spaceship.cardImage(product.name)+"'>\
           <div class='ship-info'>\
             <p class='name'>"+product.name+"</p>\
-            <p class='mfg'><strong> mfg: </strong> "+product.manufacturer+"</p>\
-            <p class='ship-class'><strong> class:</strong> "+product.class+"</p>\
+            <p class='mfg'><strong> Mfg: </strong> "+product.manufacturer+"</p>\
+            <p class='ship-class'><strong> Class: </strong> "+product.class+"</p>\
             <div class='buttons'>\
               <a href='#ship_"+index+"' class='btn btn-primary ship-btn' data-product='"+parseProduct+"'>View specs</a>\
               <a href='#' class='btn btn-primary buy-btn'> Buy Now</a>\
