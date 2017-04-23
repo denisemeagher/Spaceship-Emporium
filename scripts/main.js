@@ -43,7 +43,7 @@ $(document).on('click', '.ship-home', function(e){
   $(".ship-tab").css({
     "visibility": "visible",
     "max-height": "auto",
-    "overflow": "auto"
+    "overflow": ""
   })
   spaceship.slideAnimation("0%", "-100%")
 })
