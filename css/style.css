@@ -145,7 +145,7 @@ header.top-header {
     padding: 15px 0;
     border-radius: 4px;
     position: absolute;
-    top: 70px;
+    top: 30px;
     right: 100%;
     color: #FBFFFE;
     width: 100%; }
@@ -167,33 +167,36 @@ header.top-header {
         max-width: 350px; }
     .main-container .ship-info-container h1.ship-name {
       font-size: 38px;
-      font-weight: 600; }
+      font-weight: 700; }
     .main-container .ship-info-container .ship-price {
       margin: 0 20px 0 0;
       font-weight: 700; }
+    .main-container .ship-info-container a.btn {
+      background-color: #FBFFFE;
+      border: 0.5px solid #F77F00;
+      color: #F77F00;
+      border: none;
+      padding: 10px 0;
+      width: 125px;
+      margin: 5px 0;
+      font-size: 16px; }
+      .main-container .ship-info-container a.btn:hover {
+        box-shadow: 5px 5px 10px 0 rgba(0, 0, 0, 0.25), 5px 5px 10px 0 rgba(0, 0, 0, 0.25) !important;
+        background-color: #F77F00;
+        color: white; }
+    .main-container .ship-info-container button {
+      border: none;
+      background-color: #FBFFFE;
+      color: #607d8b;
+      padding: 10px; }
+      .main-container .ship-info-container button:hover {
+        box-shadow: 5px 5px 10px 0 rgba(0, 0, 0, 0.25), 5px 5px 10px 0 rgba(0, 0, 0, 0.25) !important; }
     .main-container .ship-info-container .sub-text {
       font-weight: 400; }
     .main-container .ship-info-container .fa {
       min-width: 32px;
       font-size: 20px;
       color: #002642; }
-    .main-container .ship-info-container .ship-home:hover {
-      cursor: pointer; }
-    .main-container .ship-info-container a.btn {
-      width: 125px; }
-  .main-container a.btn {
-    background-color: #FBFFFE;
-    border: 0.5px solid #F77F00;
-    color: #F77F00;
-    border: none;
-    padding: 10px 0;
-    margin: 5px 0;
-    font-size: 16px; }
-    .main-container a.btn:hover {
-      box-shadow: 5px 5px 10px 0 rgba(0, 0, 0, 0.25), 5px 5px 10px 0 rgba(0, 0, 0, 0.25) !important;
-      transition: 0.15s;
-      background-color: #F77F00;
-      color: white; }
 
 .ship-card {
   position: relative;

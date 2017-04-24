@@ -38,7 +38,7 @@ $(document).on('click', '.ship-btn', function(e){
   })
 })
 
-$(document).on('click', '.ship-home', function(e){
+$(document).on('click', '.home-btn', function(e){
   e.preventDefault()
   $(".ship-tab").css({
     "visibility": "visible",
